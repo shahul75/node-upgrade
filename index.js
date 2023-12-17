@@ -1,4 +1,4 @@
-# const moment = require('moment');
+// const moment = require('moment');
 
 const greeting = {
     "en" : "Hello",
@@ -16,7 +16,7 @@ const greeting = {
     let responsemessage = {
         message: message,
         info: info,
-     #   timestamp : moment().unix()
+     //   timestamp : moment().unix()
     }
     
         const response = {
