@@ -19,12 +19,4 @@ Resources:
               Ref: ApiGatewayApi
       Runtime: nodejs14.x  
       Handler: index.handler
-      InlineCode: |
-        exports.handler = async (event) => {
-          // TODO implement
-          const response = {
-            statusCode: 200,
-            body: JSON.stringify('Hello from Lambda!'),
-          };
-          return response;
-        };
+      CodeUri: .
