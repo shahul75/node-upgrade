@@ -6,7 +6,7 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
-  ApiFunction: # Adds a GET api endpoint at "/" to the ApiGatewayApi via an Api event
+  ApiFunction:
     Type: AWS::Serverless::Function
     Properties:
       Events:
@@ -20,10 +20,11 @@ Resources:
       Runtime: nodejs14.x  
       Handler: index.handler
       InlineCode: |
-        export const handler = async(event,context) => {
-               const response = {
-               statusCode: 200,
-               body: JSON.stringify("Alhamdulillah"),
-           }
+        exports.handler = async (event) => {
+          // TODO implement
+          const response = {
+            statusCode: 200,
+            body: JSON.stringify('Hello from Lambda!'),
+          };
           return response;
         };
