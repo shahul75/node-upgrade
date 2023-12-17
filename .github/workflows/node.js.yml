@@ -11,6 +11,9 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: shahul75/shared-nodejs/.github/workflows/node.js.yml
+    uses: shahul75/shared-nodejs/.github/workflows/node.js.yml@main
+    with:
+      no_inputs: no_values
+    secrets: inherit
 
  
