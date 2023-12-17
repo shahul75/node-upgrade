@@ -20,20 +20,10 @@ Resources:
       Runtime: nodejs14.x  
       Handler: index.handler
       InlineCode: |
-        exports.handler = async (event) =>{
-
-          let name = event.pathParameters.name;
-          let {lang, ...info}   = event.queryStringParameters;    
-          let message = `${greeting[lang] ? greeting[lang] : greeting['en']} ${name}`;
-          let responsemessage = {
-              message: message,
-              info: info,
-          }
-              const response = {
-              "statusCode": 200,
-               body :  JSON.stringify(responsemessage),
-              "isBase64Encoded": false
-          };
-          
+        export const handler = async(event,context) => {
+               const response = {
+               statusCode: 200,
+               body: JSON.stringify("Alhamdulillah"),
+           }
           return response;
-       };
+        };
